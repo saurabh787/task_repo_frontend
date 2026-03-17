@@ -343,33 +343,33 @@ export default function DashboardPage() {
               </p>
               <div className="mt-4 grid gap-3 sm:grid-cols-[2fr_1fr_auto] sm:items-center">
                 <input
-                  className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 shadow-sm focus:border-blue-500 focus:outline-none dark:border-slate-700 dark:bg-slate-950 dark:text-slate-200"
+                  className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 shadow-sm focus:border-blue-500 focus:outline-none dark:border-slate-700 dark:bg-slate-950 dark:text-slate-200 sm:col-start-1 sm:row-start-1"
                   placeholder="New task title"
                   value={title}
                   onChange={(event) => setTitle(event.target.value)}
                 />
                 <input
                   type="date"
-                  className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-600 shadow-sm focus:border-blue-500 focus:outline-none dark:border-slate-700 dark:bg-slate-950 dark:text-slate-200"
+                  className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-600 shadow-sm focus:border-blue-500 focus:outline-none dark:border-slate-700 dark:bg-slate-950 dark:text-slate-200 sm:col-start-2 sm:row-start-1"
                   value={dueDate}
                   onChange={(event) => setDueDate(event.target.value)}
                   min={todayMin}
                 />
+                <div className="sm:col-span-3 sm:row-start-2">
+                  <textarea
+                    className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 shadow-sm focus:border-blue-500 focus:outline-none dark:border-slate-700 dark:bg-slate-950 dark:text-slate-200"
+                    placeholder="Task description (optional)"
+                    rows={3}
+                    value={description}
+                    onChange={(event) => setDescription(event.target.value)}
+                  />
+                </div>
                 <button
-                  className="w-full rounded-full bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-200 transition hover:bg-blue-700 sm:w-auto"
+                  className="w-full rounded-full bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-200 transition hover:bg-blue-700 sm:col-start-3 sm:row-start-1 sm:w-auto"
                   onClick={handleAddTask}
                 >
                   Add task
                 </button>
-              </div>
-              <div className="mt-3">
-                <textarea
-                  className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 shadow-sm focus:border-blue-500 focus:outline-none dark:border-slate-700 dark:bg-slate-950 dark:text-slate-200"
-                  placeholder="Task description (optional)"
-                  rows={3}
-                  value={description}
-                  onChange={(event) => setDescription(event.target.value)}
-                />
               </div>
             </div>
 
