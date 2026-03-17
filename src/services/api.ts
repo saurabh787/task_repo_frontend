@@ -5,13 +5,10 @@ export const apiFetch = async (
   options: RequestInit = {},
   accessToken?: string
 ) => {
-  const headers: HeadersInit = {
-    "Content-Type": "application/json",
-    ...(options.headers || {})
-  };
-
+  const headers = new Headers(options.headers);
+  headers.set("Content-Type", "application/json");
   if (accessToken) {
-    headers.Authorization = `Bearer ${accessToken}`;
+    headers.set("Authorization", `Bearer ${accessToken}`);
   }
 
   const res = await fetch(`${API_URL}${path}`, {
